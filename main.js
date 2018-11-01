@@ -255,8 +255,7 @@ let colors_name = Object.keys(colors);
 colors_name.shift()
 
 
-// module.exports =
- function main(text , color) {
+module.exports = function main(text , color) {
     color = color.toLowerCase();
     function render(letter, line) {
         let nletter;
