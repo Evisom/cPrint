@@ -256,7 +256,9 @@ colors_name.shift()
 
 
 module.exports = function main(text , color) {
-    color = color.toLowerCase();
+    if (color != undefined) {
+        color = color.toLowerCase();
+    }
     function render(letter, line) {
         let nletter;
         // console.log(letter);
@@ -299,4 +301,3 @@ module.exports = function main(text , color) {
 
     print();
 }
-
