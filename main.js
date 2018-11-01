@@ -246,8 +246,7 @@ const letters = {
 
 
 
-// module.exports = 
-function main(text) {
+module.exports = function main(text) {
 
     function render(letter, line) {
 
