@@ -300,4 +300,3 @@ module.exports = function main(text , color) {
     print();
 }
 
-main ('erwrwer' , 'bLaCK');
