@@ -22,6 +22,6 @@ cPrint( 'text', 'color' );
 
 ## Colors
 
-![alt text](https://i.imgur.com/V3FZtuD.png "")
+![alt text](https://i.imgur.com/IAeR8BN.png "")
 
 

@@ -13,6 +13,15 @@ const colors = {
     'magenta' : "\x1b[35m",
     'cyan' : "\x1b[36m",
     'white' : "\x1b[37m",
+    'rainbow' : [
+        "\x1b[0m",
+        "\x1b[31m",
+        "\x1b[33m",
+        "\x1b[32m",
+        "\x1b[36m",
+        "\x1b[35m",
+        "\x1b[0m",
+    ]
 }
 
 let colors_name = Object.keys(colors);
@@ -53,10 +62,15 @@ module.exports = function main(text , color) {
             ncolor = colors[color]
         }
 
-        for (let i = 0; i < 7; i++) {
-            console.log(ncolor, result[i] , colors.Reset);
+        if ( color === 'rainbow' ) {
+            for (let i = 0; i < 7; i++) {
+                console.log(colors['rainbow'][i], result[i] , colors.Reset);
+            }
+        } else {
+            for (let i = 0; i < 7; i++) {
+                console.log(ncolor, result[i] , colors.Reset);
+            }
         }
-
     }
 
     let result = ['', '', '', '', '', '',''];
@@ -64,7 +78,9 @@ module.exports = function main(text , color) {
 
     for (let a = 0; a < text.length; a++) {
         for (let i = 0; i < 7; i++) {
-            if(render(text[a], i)) return console.log(colors['red'] , '[ERROR]', colors['Reset'] , 'One of the characters in your string is not supported')
+            if(render(text[a], i)) {
+                return console.log(colors['red'] , '[ERROR]', colors['Reset'] , 'One of the characters in your string is not supported')
+            }
         }
     }
 
