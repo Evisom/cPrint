@@ -31,6 +31,9 @@ module.exports = function main(text , color) {
             nletter = symbols.space;
         } else {
             nletter = symbols[letter];
+            if (!nletter) {
+                return 1;
+            }
         }
 
         result[line] += nletter[line];
@@ -61,7 +64,7 @@ module.exports = function main(text , color) {
 
     for (let a = 0; a < text.length; a++) {
         for (let i = 0; i < 7; i++) {
-            render(text[a], i);
+            if(render(text[a], i)) return console.log(colors['red'] , '[ERROR]', colors['Reset'] , 'One of the characters in your string is not supported')
         }
     }
 
